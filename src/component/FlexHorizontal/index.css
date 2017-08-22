@@ -1,0 +1,15 @@
+.FlexHorizontal{
+  display: flex;
+  justify-content: space-between
+}
+.FlexHorizontalFull{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+.FlexHorizontalCenter{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

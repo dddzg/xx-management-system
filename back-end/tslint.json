@@ -1,0 +1,18 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint-config-dgjoy"
+    ],
+    "rules": {
+        "typedef": [
+            true, 
+            "call-signature", 
+            "parameter", 
+            "member-variable-declaration"
+        ],
+        "await-promise": false,
+        "valid-jsdoc": [ false ],
+        "no-inferrable-types": [ false ],
+        "max-line-length": [ false ]
+    }
+}

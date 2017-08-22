@@ -1,0 +1,93 @@
+{
+  "name": "xx-management-system-back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./build/src/index.js",
+    "dev": "npm run build:live",
+    "build:live": "nodemon --exec .\\node_modules\\.bin\\ts-node -- ./src/index.ts"
+  },
+  "dependencies": {
+    "class-validator": "^0.7.2",
+    "config": "^1.26.1",
+    "faker": "^4.1.0",
+    "ioredis": "^3.1.2",
+    "kcors": "^2.2.1",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-logger": "^3.0.1",
+    "koa-router": "^7.2.1",
+    "mysql": "^2.14.0",
+    "raven": "^2.1.1",
+    "request-promise": "^4.2.1",
+    "routing-controllers": "^0.7.1",
+    "typedi": "^0.5.2",
+    "typeorm": "^0.1.0-alpha.32",
+    "typeorm-typedi-extensions": "^0.0.12",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/faker": "^4.1.0",
+    "@types/ioredis": "^0.0.24",
+    "@types/koa": "^2.0.39",
+    "@types/koa-logger": "^2.0.2",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "7.0.28",
+    "@types/power-assert": "^1.4.29",
+    "@types/raven": "^2.1.1",
+    "@types/request-promise": "^4.1.36",
+    "@types/supertest": "^2.0.2",
+    "@types/uuid": "^3.4.0",
+    "codecov": "^2.3.0",
+    "cz-conventional-changelog": "^2.0.0",
+    "espower-typescript": "^8.1.0",
+    "husky": "^0.13.4",
+    "lint-staged": "^4.0.2",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0",
+    "nyc": "^11.0.2",
+    "power-assert": "^1.4.4",
+    "source-map-support": "^0.4.15",
+    "supertest": "^3.0.0",
+    "ts-node": "^3.0.6",
+    "tslint": "^5.4.3",
+    "tslint-config-dgjoy": "^1.0.7",
+    "tslint-config-standard": "^6.0.1",
+    "typescript": "^2.4.0",
+    "validate-commit-msg": "^2.12.2"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint --type-check --fix --project tsconfig.json",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "directories": {
+    "test": "test/"
+  },
+  "nyc": {
+    "cache": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "extension": [
+      ".js",
+      ".ts"
+    ],
+    "exclude": [
+      "test"
+    ]
+  },
+  "description": "xx-management-system-back-end",
+  "keywords": [
+    "mangement"
+  ],
+  "author": "dzglalala",
+  "license": "ISC"
+}

@@ -1,0 +1,11 @@
+.flexTable{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.Center{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
