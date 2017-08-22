@@ -1,7 +1,7 @@
 {
   "name": "xx-management-system",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "dependencies": {
     "@types/jest": "^20.0.7",
     "@types/node": "^8.0.24",

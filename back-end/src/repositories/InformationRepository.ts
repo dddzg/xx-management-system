@@ -21,6 +21,7 @@ export class InformationRepository extends Repository<Information> {
                                   .where(`information.userId=${uid}`)
                                   .getOne()
     if (information) {
+      delete newInformation.user
       const str = Object.entries(newInformation).map(([key, value]) => `\`${key}\`='${value}'`).join(',')
       await this.query(
         `UPDATE \`information\` SET ${str} WHERE information.id=${information.id}`)

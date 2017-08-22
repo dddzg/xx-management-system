@@ -85,6 +85,7 @@ export class InformationService {
         //                               .getOne()
 
         const newInformation = new Information()
+        newInformation.user = user
         Object.entries(body).forEach(([key, value]) => {
           if (nameList.includes(key)) {
             newInformation[key] = value
@@ -124,7 +125,7 @@ export class InformationService {
                                 .where(`information.userId=${uid}`)
                                 .getOne()
       if (!t) {
-        throw new BadRequestError('不存在此信息')
+        return []
       } else {
         informationId = t.id
       }

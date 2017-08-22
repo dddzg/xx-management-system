@@ -10,7 +10,7 @@ const { Content, Footer, Sider } = Layout
 
 const config = new Map([ 
   ['首页', <InstructionsPage/>],
-  ['专家信息填入', <BigForm/>],
+  ['专家信息填入', <BigForm data={undefined}/>],
   ['密码修改', <ChangeSecret/>]
 ])
 class User extends React.Component<{}, {}> {

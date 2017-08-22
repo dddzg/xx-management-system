@@ -32,7 +32,7 @@ const nameList = ['专家证书编号', '状态', '证书有效时间', '专家�
 class BigForm extends React.Component<IBigFormProps, {editable: boolean, [index: string]: any}> {
   static defaultProps = {
     editable: true,
-    data: {},
+    data: undefined,
     mode: 'user'
   }
   FormList= ['专家证书编号']
@@ -89,9 +89,12 @@ class BigForm extends React.Component<IBigFormProps, {editable: boolean, [index:
   async componentWillMount () {
     let data
     console.log('dzg!!')
-    if (this.props.data)
+    console.log(this.props.data)
+    if (this.props.data) {
       data = await axios.get(`/information/get?informationId=${this.props.data}`)
-    else data = await axios.get(`/information/get?accessToken=${appState.accessToken}`)
+    } else {
+      data = await axios.get(`/information/get?accessToken=${appState.accessToken}`)
+    }
     data = data.data
     Object.entries(data).forEach(([key, value]) => {
       this[key] = value
@@ -201,7 +204,7 @@ class BigForm extends React.Component<IBigFormProps, {editable: boolean, [index:
               this.getContent()
             }
             <Col span={24}>
-              <FormItem label="资格证书名及编号" labelCol={{ span: 3 }} wrapperCol= {{ span: 21 }}>
+              <FormItem label="资格证书名及编号" labelCol={{ span: 3 }} wrapperCol={{ span: 21 }}>
                 <EditableTagGroup 
                   defaultValue={this.资格证书名及编号 || []} 
                   maxNumber={10} 
@@ -213,7 +216,7 @@ class BigForm extends React.Component<IBigFormProps, {editable: boolean, [index:
               </FormItem>
             </Col>
             <Col span={24}>
-              <FormItem label="评审领域" labelCol={{ span: 3 }} wrapperCol= {{ span: 21 }} required>
+              <FormItem label="评审领域" labelCol={{ span: 3 }} wrapperCol={{ span: 21 }} required>
                   <Select
                     defaultValue={this.评审领域 || []}
                     mode="multiple"
